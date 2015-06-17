@@ -1,7 +1,7 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Provides an makeCacheMatrix function that is able to cache the solution of a matrix
+## via the lexical scope of a inner function and the cacheSolve func.
 
-## Makes a special form a matrix that is able to cache the computation of its inverse.
+## Makes a special form of a matrix that is able to cache the computation of its inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
     i <- NULL
@@ -15,7 +15,7 @@ makeCacheMatrix <- function(x = matrix()) {
     list(set = set, get = get, setinv = setinv, getinv = getinv)
 }
 
-## Caches the inverse of the matrix.
+## Caches and returns the inverse of a matrix. 'x' is a list returned from makeCacheMatrix.
 
 cacheSolve <- function(x, ...) {
     i <- x$getinv()
